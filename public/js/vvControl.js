@@ -8,7 +8,7 @@ $(function(){
     });
   });
 
-$('#stop').click(function(event){
+  $('#stop').click(function(event){
     event.preventDefault();
     $.post('/action/stop', {}, function(data, status, xhr){
       console.log('Stop Action Status:', status);

@@ -1,0 +1,17 @@
+span {
+  font-size: 9rem;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+div.button {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  border-radius: 8px; 
+  border: 2px solid black;
+  width: 75%;
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+}

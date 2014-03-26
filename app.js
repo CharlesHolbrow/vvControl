@@ -30,11 +30,13 @@ app.use(app.router);
 
 app.post('/action/start', function(req, res, next){
   oscClient.send('/action/start', 1);
+  console.log('Start Request:', req.ip);
   res.json({okay:true, action:'start'});
 });
 
 app.post('/action/stop', function(req, res, next){
   oscClient.send('/action/stop', 1);
+  console.log('Stop Request: ', req.ip);
   res.json({okay:true, action:'stop'});
 });
 

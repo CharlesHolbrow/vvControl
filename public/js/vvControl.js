@@ -16,4 +16,13 @@ $(function(){
     });
   });
 
+  setInterval(function(){
+    $.get('/state', {}, function(data, status, xhr){
+      xhr.fail(function(){
+        $('#state').html("Not Connected");
+      })
+      $('#state').html(data.state);
+    });
+  }, 300);
+
 });

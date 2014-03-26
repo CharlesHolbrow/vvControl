@@ -1,18 +1,33 @@
 span {
-  font-size: 9rem;
   display: block;
   width: 100%;
   text-align: center;
+}
+
+html{
+  font-size: 9rem;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 div.button {
-  margin-top: 50px;
-  margin-bottom: 200px;
   border-radius: 8px; 
   border: 2px solid black;
-  width: 75%;
-  margin-right: auto;
-  margin-left: auto;
   cursor: pointer;
+}
+
+div.center {
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+}
+
+div.button#start{
+  margin-top: 50px;
+  margin-bottom: 200px;
+}
+
+div#state {
+  margin-top: 50px;
+  text-align: center;
+  font-size: 50%
 }

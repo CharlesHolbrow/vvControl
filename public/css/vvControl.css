@@ -21,12 +21,12 @@ div.center {
   width: 75%;
 }
 
-div.button#start{
+div.button#start {
   margin-top: 50px;
   margin-bottom: 200px;
 }
 
-div#state {
+div#state, div#time {
   margin-top: 50px;
   text-align: center;
   font-size: 50%

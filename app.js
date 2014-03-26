@@ -7,13 +7,17 @@ var oscClient = new osc.Client('127.0.0.1', 3334);
 var oscServer = new osc.Server('3332', '0.0.0.0');
 
 // Store the state
-var state = 0; // 0 = stopped, 1 = playing
+var state = 'initialized';
+var time = '0:00' // sprintf %i:%02i
 var actions = {
   '/state': function(msg){
     state = msg[1];
-    console.log('state:', state);
+  },
+  '/time': function(msg){
+    time = msg[1];
   }
 };
+
 oscServer.on('message', function(msg, rinfo){
   var action = actions[msg[0]];
   (typeof action === 'function') && action(msg);
@@ -35,7 +39,7 @@ app.post('/action/stop', function(req, res, next){
 });
 
 app.get('/state', function(req, res, next){
-  res.json({state:state});
+  res.json({state:state, time:time});
 });
 
 var server = app.listen(3333);

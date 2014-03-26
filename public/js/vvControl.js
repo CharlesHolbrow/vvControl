@@ -22,6 +22,7 @@ $(function(){
         $('#state').html("Not Connected");
       })
       $('#state').html(data.state);
+      $('#time').html(data.time);
     });
   }, 290);
 

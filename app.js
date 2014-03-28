@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var path = require('path');
 var express = require('express');
 var osc = require('node-osc');
@@ -45,3 +47,8 @@ app.get('/state', function(req, res, next){
 });
 
 var server = app.listen(3333);
+
+// ping max
+setInterval(function(){
+  oscClient.send('/active');
+}, 500);

@@ -31,8 +31,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
 
 app.post('/action/start', function(req, res, next){
-  oscClient.send('/action/start', 1);
-  console.log('Start Request:', req.ip);
+  var level = req.body.level;
+  var oscArg;
+  if      (level === '3') oscArg = 'loud';
+  else if (level === '2') oscArg = 'medium';
+  else if (level === '1') oscArg = 'soft';
+  else console.log('Error: received start request without a level:', req.body);
+  oscClient.send('/action/start', oscArg);
+  console.log('Start Request:', req.ip, req.body);
   res.json({okay:true, action:'start'});
 });
 

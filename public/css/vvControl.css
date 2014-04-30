@@ -21,9 +21,9 @@ div.center {
   width: 75%;
 }
 
-div.button#start {
+div.button {
   margin-top: 50px;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
 }
 
 div#state, div#time {

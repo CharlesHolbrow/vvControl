@@ -1,8 +1,9 @@
 $(function(){
 
-  $('#start').click(function(event){
+  $('.start').click(function(event){
     event.preventDefault();
-    $.post('/action/start', {}, function(data, status, xhr){
+    var level = this.attributes.level ? this.attributes.level.value : '3';
+    $.post('/action/start', {level:level}, function(data, status, xhr){
       console.log('Start Action Status:', status);
       console.log('Start Action Data:', data);
     });
